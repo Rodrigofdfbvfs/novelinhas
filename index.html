@@ -12,12 +12,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a href="#inicio" class="brand" aria-label="Dorama Play, início">
-      <span class="brand-mark">▶</span>
-      <span>DORAMA<span>PLAY</span></span>
-    </a>
-    <a class="top-link" href="#planos">Ver planos</a>
+  <header class="offer-bar" aria-label="Oferta do dia">
+    <span class="offer-pulse"></span>
+    <strong>Oferta válida somente hoje</strong>
+    <time id="offerDate" datetime=""></time>
   </header>
 
   <main>
@@ -26,10 +24,6 @@
         <div class="eyebrow"><span>✦</span> +1.000 novelas no app</div>
         <h1>Pare de gastar com <em>moedinhas</em> para assistir às suas novelinhas preferidas.</h1>
         <p class="hero-lead">Tenha acesso ilimitado ao nosso app de novelas. Assista histórias completas, sem pausas e sem anúncios — pagando um único valor pelo seu plano.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#planos">Quero assistir sem limites</a>
-          <a class="button button-ghost" href="#como-funciona"><span class="mini-play">▶</span> Ver como funciona</a>
-        </div>
         <div class="trust-row">
           <span><b>✓</b> Acesso imediato</span>
           <span><b>✓</b> Sem anúncios</span>
@@ -37,31 +31,8 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Prévia do aplicativo Dorama Play">
-        <div class="glow glow-one"></div>
-        <div class="poster-card">
-          <img src="assets/hero-catalogo.png" alt="Elenco fictício de uma novela em uma arte cinematográfica" />
-          <div class="poster-copy">
-            <small>ESTREIA EXCLUSIVA</small>
-            <strong>Entre o Amor<br />e o Destino</strong>
-            <span>16 episódios • Dublado</span>
-          </div>
-        </div>
-        <div class="phone phone-main">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="app-head"><b>DORAMA<span>PLAY</span></b><i>⌕</i></div>
-            <div class="featured">
-              <img src="assets/hero-catalogo.png" alt="" />
-              <div><small>NOVA SÉRIE</small><strong>Entre o Amor<br />e o Destino</strong><button type="button">▶ Assistir</button></div>
-            </div>
-            <p class="rail-title">Em alta agora</p>
-            <div class="thumb-row"><span></span><span></span><span></span></div>
-            <nav class="app-nav"><b>⌂<small>Início</small></b><b>▷<small>Novelas</small></b><b>♡<small>Favoritos</small></b></nav>
-          </div>
-        </div>
-        <div class="floating-tag tag-top"><b>+1.000</b><span>novelas</span></div>
-        <div class="floating-tag tag-bottom"><b>Sem anúncios</b><span>assista direto</span></div>
+      <div class="hero-apps-image" aria-label="Aplicativos disponíveis no acesso">
+        <img src="assets/apps-inclusos.jpeg" alt="Aplicativos de novelas curtas disponíveis no acesso" />
       </div>
     </section>
 
@@ -69,41 +40,11 @@
       <div><span>✦</span> DORAMAS COMPLETOS <span>✦</span> ACESSO ILIMITADO <span>✦</span> SEM MOEDINHAS <span>✦</span> NOVOS TÍTULOS TODA SEMANA <span>✦</span></div>
     </section>
 
-    <section class="problem section-shell">
-      <div class="section-heading narrow">
-        <span class="kicker">Chega de interrupções</span>
-        <h2>Sua próxima maratona não precisa custar uma fortuna.</h2>
-        <p>Esqueça pacotes de moedas, anúncios entre cenas e episódios bloqueados. Aqui, seu plano libera o catálogo para você assistir no seu ritmo.</p>
-      </div>
-      <div class="benefit-grid">
-        <article><span class="benefit-icon">∞</span><h3>Acesso ilimitado</h3><p>Comece uma história e vá até o final sem comprar créditos extras.</p></article>
-        <article><span class="benefit-icon">⊘</span><h3>Sem anúncios</h3><p>Nada de pausas no melhor momento. A história continua quando você quiser.</p></article>
-        <article><span class="benefit-icon">＋</span><h3>Catálogo crescendo</h3><p>Peça novas novelas e acompanhe as novidades adicionadas à comunidade.</p></article>
-      </div>
-      <div class="apps-showcase">
-        <div class="apps-copy">
-          <span class="kicker">Tudo em um só acesso</span>
-          <h3>Suas histórias favoritas, reunidas.</h3>
-          <p>Encontre produções dos apps de novelas curtas que você já conhece sem precisar comprar moedas em cada episódio.</p>
-          <a class="text-link" href="#planos">Ver planos de acesso</a>
-        </div>
-        <figure>
-          <img src="assets/apps-inclusos.jpeg" alt="Aplicativos de novelas curtas disponíveis no catálogo" />
-          <figcaption>Apps e catálogos disponíveis no acesso</figcaption>
-        </figure>
-      </div>
-    </section>
-
     <section class="demo section-shell" id="como-funciona">
       <div class="demo-copy">
         <span class="kicker">Veja por dentro</span>
         <h2>Dê o play e descubra como é simples.</h2>
         <p>Em poucos passos você escolhe a novela, encontra todos os episódios e começa a assistir — sem desbloquear cena por cena.</p>
-        <ul>
-          <li><b>1</b><span><strong>Escolha o seu plano</strong>Mensal ou anual, do jeito que combina com você.</span></li>
-          <li><b>2</b><span><strong>Receba seu acesso</strong>As instruções chegam imediatamente após a confirmação.</span></li>
-          <li><b>3</b><span><strong>Prepare a maratona</strong>Entre no app e assista às suas histórias favoritas.</span></li>
-        </ul>
       </div>
       <div class="video-stage" id="videoStage">
         <div class="video-noise"></div>
@@ -120,14 +61,14 @@
     <section class="social-proof">
       <div class="section-shell">
         <div class="section-heading">
-          <span class="kicker">Quem entrou, maratonou</span>
-          <h2>As dorameiras estão amando. <span>♥</span></h2>
+          <span class="kicker">Experiências reais</span>
+          <h2>Quem usa está amando. <span>♥</span></h2>
         </div>
-        <div class="testimonials real-feedbacks">
-          <figure><img src="assets/feedback-1.jpg" alt="Feedback de cliente elogiando a compra e o suporte" /><figcaption><span>★★★★★</span> Compra verificada</figcaption></figure>
-          <figure class="feedback-featured"><img src="assets/feedback-2.jpg" alt="Feedback de cliente dizendo que conseguiu acessar e vai maratonar no app" /><figcaption><span>★★★★★</span> Compra verificada</figcaption></figure>
-          <figure><img src="assets/feedback-3.jpg" alt="Feedback de cliente dizendo que o app é fácil de baixar e usar" /><figcaption><span>★★★★★</span> Compra verificada</figcaption></figure>
-          <figure><img src="assets/feedback-4.webp" alt="Feedback de cliente agradecendo por assistir à série sem cortes e comerciais" /><figcaption><span>★★★★★</span> Compra verificada</figcaption></figure>
+        <div class="feedback-stack">
+          <figure><img src="assets/feedback-1.jpg" alt="Feedback de cliente elogiando a compra e o suporte" /></figure>
+          <figure><img src="assets/feedback-2.jpg" alt="Feedback de cliente dizendo que conseguiu acessar e vai maratonar no app" /></figure>
+          <figure><img src="assets/feedback-3.jpg" alt="Feedback de cliente dizendo que o app é fácil de baixar e usar" /></figure>
+          <figure><img src="assets/feedback-4.webp" alt="Feedback de cliente agradecendo por assistir à série sem cortes e comerciais" /></figure>
         </div>
       </div>
     </section>

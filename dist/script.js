@@ -1,6 +1,21 @@
 const stage = document.querySelector('#videoStage');
 const play = document.querySelector('#playDemo');
 const toast = document.querySelector('#toast');
+const offerDate = document.querySelector('#offerDate');
+
+function updateOfferDate() {
+  if (!offerDate) return;
+  const now = new Date();
+  offerDate.dateTime = now.toISOString().slice(0, 10);
+  offerDate.textContent = new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  }).format(now);
+}
+
+updateOfferDate();
+window.setInterval(updateOfferDate, 60000);
 
 play?.addEventListener('click', () => {
   stage.classList.remove('playing');
