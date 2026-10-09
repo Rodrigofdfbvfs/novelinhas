@@ -1,4 +1,3 @@
-const toast = document.querySelector('#toast');
 const offerDate = document.querySelector('#offerDate');
 
 function updateOfferDate() {
@@ -72,14 +71,3 @@ if (feedbackViewport && feedbackTrack) {
 
   window.requestAnimationFrame(autoplay);
 }
-
-document.querySelectorAll('.checkout').forEach(link => {
-  link.addEventListener('click', event => {
-    if (link.getAttribute('href') === '#') {
-      event.preventDefault();
-      toast.textContent = `Plano ${link.dataset.plan}: adicione aqui o seu link de checkout.`;
-      toast.classList.add('show');
-      window.setTimeout(() => toast.classList.remove('show'), 3200);
-    }
-  });
-});
