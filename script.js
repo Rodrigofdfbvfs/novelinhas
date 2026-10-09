@@ -60,9 +60,9 @@ function initInfiniteCarousel({ viewport, track, previous, next, speed }) {
     previousTime = time;
     if (!paused && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       viewport.scrollLeft += elapsed * speed;
-      const halfway = track.scrollWidth / 2;
-      if (viewport.scrollLeft >= halfway) viewport.scrollLeft -= halfway;
     }
+    const halfway = track.scrollWidth / 2;
+    if (halfway > 0 && viewport.scrollLeft >= halfway) viewport.scrollLeft -= halfway;
     window.requestAnimationFrame(autoplay);
   };
 
