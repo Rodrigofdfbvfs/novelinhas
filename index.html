@@ -37,7 +37,10 @@
     </section>
 
     <section class="ticker" aria-label="Benefícios do app">
-      <div><span>✦</span> DORAMAS COMPLETOS <span>✦</span> ACESSO ILIMITADO <span>✦</span> SEM MOEDINHAS <span>✦</span> NOVOS TÍTULOS TODA SEMANA <span>✦</span></div>
+      <div class="ticker-track">
+        <div class="ticker-group"><span>✦</span> DORAMAS COMPLETOS <span>✦</span> ACESSO ILIMITADO <span>✦</span> SEM MOEDINHAS <span>✦</span> NOVOS TÍTULOS TODA SEMANA <span>✦</span></div>
+        <div class="ticker-group" aria-hidden="true"><span>✦</span> DORAMAS COMPLETOS <span>✦</span> ACESSO ILIMITADO <span>✦</span> SEM MOEDINHAS <span>✦</span> NOVOS TÍTULOS TODA SEMANA <span>✦</span></div>
+      </div>
     </section>
 
     <section class="demo section-shell" id="como-funciona">
@@ -64,11 +67,17 @@
           <span class="kicker">Experiências reais</span>
           <h2>Quem usa está amando. <span>♥</span></h2>
         </div>
-        <div class="feedback-stack">
-          <figure><img src="assets/feedback-1.jpg" alt="Feedback de cliente elogiando a compra e o suporte" /></figure>
-          <figure><img src="assets/feedback-2.jpg" alt="Feedback de cliente dizendo que conseguiu acessar e vai maratonar no app" /></figure>
-          <figure><img src="assets/feedback-3.jpg" alt="Feedback de cliente dizendo que o app é fácil de baixar e usar" /></figure>
-          <figure><img src="assets/feedback-4.webp" alt="Feedback de cliente agradecendo por assistir à série sem cortes e comerciais" /></figure>
+        <div class="feedback-carousel" aria-label="Feedbacks de clientes">
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="Feedback anterior">‹</button>
+          <div class="feedback-viewport" id="feedbackViewport" tabindex="0">
+            <div class="feedback-track" id="feedbackTrack">
+              <figure><img src="assets/feedback-1.jpg" alt="Feedback de cliente elogiando a compra e o suporte" /></figure>
+              <figure><img src="assets/feedback-2.jpg" alt="Feedback de cliente dizendo que conseguiu acessar e vai maratonar no app" /></figure>
+              <figure><img src="assets/feedback-3.jpg" alt="Feedback de cliente dizendo que o app é fácil de baixar e usar" /></figure>
+              <figure><img src="assets/feedback-4.webp" alt="Feedback de cliente agradecendo por assistir à série sem cortes e comerciais" /></figure>
+            </div>
+          </div>
+          <button class="carousel-arrow carousel-next" type="button" aria-label="Próximo feedback">›</button>
         </div>
       </div>
     </section>
