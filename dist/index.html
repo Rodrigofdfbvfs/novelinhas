@@ -49,15 +49,11 @@
         <h2>Dê o play e descubra como é simples.</h2>
         <p>Em poucos passos você escolhe a novela, encontra todos os episódios e começa a assistir — sem desbloquear cena por cena.</p>
       </div>
-      <div class="video-stage" id="videoStage">
-        <div class="video-noise"></div>
-        <div class="video-preview">
-          <div class="preview-logo"><span>▶</span> DORAMA PLAY</div>
-          <h3>Um catálogo inteiro.<br />Um único acesso.</h3>
-          <div class="preview-shelf"><i></i><i></i><i></i><i></i></div>
-        </div>
-        <button class="play-button" id="playDemo" type="button" aria-label="Assistir demonstração"><span>▶</span></button>
-        <div class="video-caption"><span>00:00</span><div><i></i></div><span>00:32</span></div>
+      <div class="wistia-video" aria-label="Vídeo demonstrativo do aplicativo">
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script src="https://fast.wistia.com/embed/pomvva917f.js" async type="module"></script>
+        <style>wistia-player[media-id='pomvva917f']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pomvva917f/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
+        <wistia-player media-id="pomvva917f" aspect="0.5625"></wistia-player>
       </div>
     </section>
 

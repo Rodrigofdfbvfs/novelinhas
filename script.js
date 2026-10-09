@@ -1,5 +1,3 @@
-const stage = document.querySelector('#videoStage');
-const play = document.querySelector('#playDemo');
 const toast = document.querySelector('#toast');
 const offerDate = document.querySelector('#offerDate');
 
@@ -74,17 +72,6 @@ if (feedbackViewport && feedbackTrack) {
 
   window.requestAnimationFrame(autoplay);
 }
-
-play?.addEventListener('click', () => {
-  stage.classList.remove('playing');
-  void stage.offsetWidth;
-  stage.classList.add('playing');
-  play.setAttribute('aria-label', 'Demonstração em reprodução');
-  window.setTimeout(() => {
-    stage.classList.remove('playing');
-    play.setAttribute('aria-label', 'Reproduzir demonstração novamente');
-  }, 8000);
-});
 
 document.querySelectorAll('.checkout').forEach(link => {
   link.addEventListener('click', event => {
