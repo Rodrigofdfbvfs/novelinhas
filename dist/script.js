@@ -14,18 +14,15 @@ function updateOfferDate() {
 updateOfferDate();
 window.setInterval(updateOfferDate, 60000);
 
-const feedbackViewport = document.querySelector('#feedbackViewport');
-const feedbackTrack = document.querySelector('#feedbackTrack');
-const previousFeedback = document.querySelector('.carousel-prev');
-const nextFeedback = document.querySelector('.carousel-next');
+function initInfiniteCarousel({ viewport, track, previous, next, speed }) {
+  if (!viewport || !track) return;
 
-if (feedbackViewport && feedbackTrack) {
-  const originalCards = [...feedbackTrack.children];
+  const originalCards = [...track.children];
   originalCards.forEach(card => {
     const clone = card.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
     clone.querySelector('img')?.setAttribute('alt', '');
-    feedbackTrack.appendChild(clone);
+    track.appendChild(clone);
   });
 
   let paused = false;
@@ -33,9 +30,9 @@ if (feedbackViewport && feedbackTrack) {
   let previousTime = performance.now();
 
   const cardStep = () => {
-    const card = feedbackTrack.querySelector('figure');
-    if (!card) return feedbackViewport.clientWidth;
-    const styles = getComputedStyle(feedbackTrack);
+    const card = track.querySelector('figure');
+    if (!card) return viewport.clientWidth;
+    const styles = getComputedStyle(track);
     return card.getBoundingClientRect().width + parseFloat(styles.gap || 0);
   };
 
@@ -47,27 +44,43 @@ if (feedbackViewport && feedbackTrack) {
 
   const move = direction => {
     pauseTemporarily();
-    feedbackViewport.scrollBy({ left: cardStep() * direction, behavior: 'smooth' });
+    viewport.scrollBy({ left: cardStep() * direction, behavior: 'smooth' });
   };
 
-  previousFeedback?.addEventListener('click', () => move(-1));
-  nextFeedback?.addEventListener('click', () => move(1));
-  feedbackViewport.addEventListener('pointerdown', pauseTemporarily);
-  feedbackViewport.addEventListener('mouseenter', () => { paused = true; });
-  feedbackViewport.addEventListener('mouseleave', () => { paused = false; });
-  feedbackViewport.addEventListener('focusin', () => { paused = true; });
-  feedbackViewport.addEventListener('focusout', () => { paused = false; });
+  previous?.addEventListener('click', () => move(-1));
+  next?.addEventListener('click', () => move(1));
+  viewport.addEventListener('pointerdown', pauseTemporarily);
+  viewport.addEventListener('mouseenter', () => { paused = true; });
+  viewport.addEventListener('mouseleave', () => { paused = false; });
+  viewport.addEventListener('focusin', () => { paused = true; });
+  viewport.addEventListener('focusout', () => { paused = false; });
 
   const autoplay = time => {
     const elapsed = Math.min(time - previousTime, 32);
     previousTime = time;
     if (!paused && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      feedbackViewport.scrollLeft += elapsed * 0.018;
-      const halfway = feedbackTrack.scrollWidth / 2;
-      if (feedbackViewport.scrollLeft >= halfway) feedbackViewport.scrollLeft -= halfway;
+      viewport.scrollLeft += elapsed * speed;
+      const halfway = track.scrollWidth / 2;
+      if (viewport.scrollLeft >= halfway) viewport.scrollLeft -= halfway;
     }
     window.requestAnimationFrame(autoplay);
   };
 
   window.requestAnimationFrame(autoplay);
 }
+
+initInfiniteCarousel({
+  viewport: document.querySelector('#feedbackViewport'),
+  track: document.querySelector('#feedbackTrack'),
+  previous: document.querySelector('.carousel-prev'),
+  next: document.querySelector('.carousel-next'),
+  speed: 0.018
+});
+
+initInfiniteCarousel({
+  viewport: document.querySelector('#appPreviewViewport'),
+  track: document.querySelector('#appPreviewTrack'),
+  previous: document.querySelector('.app-carousel-prev'),
+  next: document.querySelector('.app-carousel-next'),
+  speed: 0.012
+});
